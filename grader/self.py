@@ -152,12 +152,16 @@ def check_for_loop() -> List[Check]:
                          'for loop with multiple statements do compile') + \
         check_compilable('nested.c',
                          'nested for loops do compile') + \
+        check_compilable('no-statements.c',
+                         'for loop with no statements do compile') + \
         check_mipster_execution('single-statement.c', 42,
                                 'for loop with one statement are implement with the right semantics') + \
         check_mipster_execution('multiple-statements.c', 42,
                                 'for loop with multiple statements are implemented with the right semantics') + \
         check_mipster_execution('nested.c', 42,
-                                'nested for loops are implemented with the right semantics')
+                                'nested for loops are implemented with the right semantics') + \
+        check_mipster_execution('no-statements.c', 42,
+                                'for loop with no statements are implemented with the right semantics')
 
 
 def check_lazy_evaluation() -> List[Check]:
